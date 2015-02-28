@@ -1,0 +1,11 @@
+machine:
+  services:
+    - docker
+dependencies:
+  override:
+    - docker build -t mule-3.6 3.6/
+    - docker build -t mule-3.5 3.5/
+test:
+  override:
+    - docker run -d -p 8081:8081 mule-3.6; sleep 5
+    - docker run -d -p 8082:8081 mule-3.5; sleep 5
