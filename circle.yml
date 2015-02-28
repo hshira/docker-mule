@@ -3,9 +3,15 @@ machine:
     - docker
 dependencies:
   override:
-    - docker build -t mule-3.6 3.6/
-    - docker build -t mule-3.5 3.5/
+    - docker build -t hshira/mule:3.6 3.6/
+    - docker build -t hshira/mule:3.5 3.5/
 test:
   override:
     - docker run -d -p 8081:8081 mule-3.6; sleep 5
     - docker run -d -p 8082:8081 mule-3.5; sleep 5
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push hshira/mule:3.6
