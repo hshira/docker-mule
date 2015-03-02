@@ -12,4 +12,6 @@ RUN rm /opt/mule-standalone-${MULE_VERSION}.tar.gz
 
 RUN ln -s /opt/mule-standalone-${MULE_VERSION} /opt/mule 
 
+EXPOSE 8081
+
 CMD [ "/opt/mule/bin/mule" ]
