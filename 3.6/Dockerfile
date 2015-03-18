@@ -8,12 +8,14 @@ RUN wget https://repository.mulesoft.org/nexus/content/repositories/releases/org
 
 RUN tar xvzf /opt/mule-standalone-${MULE_VERSION}.tar.gz
 
-#RUN echo "4a94356f7401ac8be30a992a414ca9b9 mule-standalone-${MULE_VERSION}.tar.gz" | md5sum -c
 
 RUN rm /opt/mule-standalone-${MULE_VERSION}.tar.gz
 
 RUN ln -s /opt/mule-standalone-${MULE_VERSION} /opt/mule 
 
+
 EXPOSE 8081
+
+RUN echo "Running mule"
 
 CMD [ "/opt/mule/bin/mule" ]
