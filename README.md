@@ -28,4 +28,4 @@ To ssh in the image
 	docker exec -it docker-mule bash
 
 
-All Set !
+All Set ! Ready to go.
