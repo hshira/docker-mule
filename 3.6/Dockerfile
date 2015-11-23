@@ -2,7 +2,7 @@ FROM java:7
 
 WORKDIR /opt
 
-ENV MULE_VERSION 3.6.0
+ENV MULE_VERSION 3.6.1
 
 RUN wget https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/${MULE_VERSION}/mule-standalone-${MULE_VERSION}.tar.gz
 
