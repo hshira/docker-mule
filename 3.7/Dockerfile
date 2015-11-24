@@ -1,4 +1,4 @@
-FROM java:8u66-jre
+FROM java:8
 
 WORKDIR /opt
 
